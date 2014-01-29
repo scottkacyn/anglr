@@ -43,3 +43,16 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'bundler'
+
+gem 'rails_12factor'
+
+gem 'rails_on_heroku'
+
+gem 'bootstrap-sass'
+
+gem 'devise', github: 'plataformatec/devise'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
