@@ -1,4 +1,8 @@
 Anglr::Application.routes.draw do
+  resources :subcategories
+
+  resources :categories
+
   resources :articles
 
   resources :authors
