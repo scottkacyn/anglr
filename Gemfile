@@ -35,6 +35,9 @@ end
 # Use ActsAsTaggableOn for categorization
 gem 'acts-as-taggable-on'
 
+# Use Bootstrap-WYSIHTML5 for rich text editor
+gem 'bootstrap-wysihtml5-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
