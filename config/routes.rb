@@ -1,5 +1,7 @@
 Anglr::Application.routes.draw do
   
+  resources :publishers
+
   get "tags/:tag", to: "articles#index", as: :tag
   get "categories/:category", to: "articles#index", as: :category
   get "authors/:author", to: "articles#index", as: :author
