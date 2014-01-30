@@ -1,10 +1,19 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:category]
+      @articles = Article.tagged_with(params[:category], :on => :categories, :any => true)
+    elsif params[:author]
+      @articles = Article.tagged_with(params[:author], :on => :authors, :any => true)
+    elsif params[:tag]
+      @articles = Article.tagged_with(params[:tag], :on => :tags, :any => true)
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1
@@ -69,6 +78,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:body, :title, :source_url, :slug, :author_id)
+      params.require(:article).permit(:body, :title, :source_url, :slug, :author_id, :author_list, :category_list, :tag_list)
     end
 end

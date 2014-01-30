@@ -14,7 +14,53 @@
 @import "bootstrap_configuration";
 @import "bootstrap";
 
+h1, h2, h3, h4, h5, ul, ol, li, p, div {
+    margin: 0;
+    padding: 0;
+}
+
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* ------------- */
+/* Articles List */
+/* ------------- */
+
+.article-list {
+    list-style: none;
+}
+
+.article {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.article h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+.article h1:hover {
+    color: #555;
+}
+
+.article-category {
+    color: #AAAAAA;
+}
+
+.article-category:after {
+    content: " | ";
+    color: #CCCCCC;
+}
+
+.article-category:last-child:after {
+    content: "";
 }

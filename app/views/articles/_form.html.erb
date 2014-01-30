@@ -18,15 +18,24 @@
   <div class="field">
     <%= f.text_field :source_url, :class => "form-control", :placeholder => "URL of source article" %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.text_area :body, :class => "form-control", :rows => "20" %>
+    <%= f.text_area :body, :class => "form-control", :rows => "12" %>
   </div>
-  
+  <br/> 
+  <div class="field">
+    <%= f.text_field :author_list, :class => "form-control", :placeholder => "Enter the author(s) for the article" %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.text_field :category_list, :class => "form-control", :placeholder => "Enter the categories for the article" %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.text_field :tag_list, :class => "form-control", :placeholder => "Enter the tag(s) for the article" %>
+  </div>
+  <br/> 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-<script type="text/javascript">
-  $("#article_body").wysihtml5();
-</script>
