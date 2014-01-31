@@ -1,8 +1,17 @@
 <div class="wrapper">
-    <blockquote>
-        <p>Anglr is an homage to longform writing, harkening back to the days before 140 characters and Top 10 lists.</p>
-    </blockquote>
+    <ul class="info-box">
+        <div class="info-box-top">
+            <blockquote>
+                <p>Anglr is an homage to longform writing, harkening back to the days before 140 characters and Top 10 lists.</p>
+            </blockquote>
+        </div>
+    </ul>
     <ul class="article-list">
+    <% if params[:category] %>
+        <h4><%= params[:category] %></h4>
+    <% elsif params[:author] %>
+        <h4><%= params[:author] %></h4>
+    <% end %>
     <% @articles.each do |article| %>
         <li class="article">
             <h1><%= link_to article.title, article.source_url, :target => "_blank" %></h1>

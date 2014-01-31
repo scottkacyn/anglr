@@ -6,13 +6,13 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:category]
-      @articles = Article.tagged_with(params[:category], :on => :categories, :any => true)
+      @articles = Article.tagged_with(params[:category], :on => :categories, :any => true).order(created_at: :desc)
     elsif params[:author]
-      @articles = Article.tagged_with(params[:author], :on => :authors, :any => true)
+      @articles = Article.tagged_with(params[:author], :on => :authors, :any => true).order(created_at: :desc)
     elsif params[:tag]
-      @articles = Article.tagged_with(params[:tag], :on => :tags, :any => true)
+      @articles = Article.tagged_with(params[:tag], :on => :tags, :any => true).order(created_at: :desc)
     else
-      @articles = Article.all
+      @articles = Article.order(created_at: :desc)
     end
   end
 

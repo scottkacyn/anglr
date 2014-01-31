@@ -20,9 +20,61 @@ h1, h2, h3, h4, h5, ul, ol, li, p, div {
     padding: 0;
 }
 
+body {
+    //background: url(squairy_light.png) repeat #fafafa;
+    background: #f0f2eb;
+}
+
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* -------------- */
+/* Navigation Bar */
+/* -------------- */
+
+.navbar {
+    background: #ff4242;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
+    color: #fafafa;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #ff4242;
+    color: #ffffff;
+}
+
+h1.logo a {
+    display: inline-block;
+    float: left;
+    height: 24px;
+    max-width: 118px;
+    background: url("anglr-logo.png") no-repeat;
+    background-size: contain;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 15px 0 0 15px;
+}
+
+/* -------- */
+/* Info Box */
+/* -------- */
+
+.info-box {
+    float: left;
+    width: 40%;
+}
+
+.info-box-top {
+    margin: 15px;
 }
 
 /* ------------- */
@@ -30,11 +82,18 @@ h1, h2, h3, h4, h5, ul, ol, li, p, div {
 /* ------------- */
 
 .article-list {
+    float: left;
+    width: 60%;
     list-style: none;
+}
+
+.article-list h4 {
+    padding: 25px 15px 5px 20px;
 }
 
 .article {
     padding: 15px;
+    margin: 15px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 7px;
@@ -80,4 +139,10 @@ h1, h2, h3, h4, h5, ul, ol, li, p, div {
 
 .article-category:last-child:after {
     content: "";
+}
+
+@media only screen and (max-width : 320px) {
+    .info-box, .article-list {
+        width: 100%;
+    }
 }

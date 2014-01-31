@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :set_categories
 
   private
   
@@ -21,6 +22,10 @@ class ApplicationController < ActionController::Base
 
       redirect_to fallback_redirect, flash: {error: "You must be signed in to view this page."}
     end
+  end
+
+  def set_categories
+    @categories = Article.tag_counts_on(:categories).sort{ |x,y| x.name <=> y.name }
   end
 
 end

@@ -4,6 +4,7 @@ Anglr::Application.routes.draw do
 
   get "tags/:tag", to: "articles#index", as: :tag
   get "categories/:category", to: "articles#index", as: :category
+  get "categories/:category_id", to: "articles#index", as: :category_id
   get "authors/:author", to: "articles#index", as: :author
 
   resources :articles
