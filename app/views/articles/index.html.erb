@@ -1,14 +1,26 @@
 <div class="wrapper">
+    <blockquote>
+        <p>Anglr is an homage to longform writing, harkening back to the days before 140 characters and Top 10 lists.</p>
+    </blockquote>
     <ul class="article-list">
     <% @articles.each do |article| %>
         <li class="article">
             <h1><%= link_to article.title, article.source_url, :target => "_blank" %></h1>
-            <div class="article-categories">
-            <% article.category_list.each do |category| %>
-                <span class="article-category">
-                    <%=raw link_to category, category_path(category) %></span>
-            <% end %>
+            
+            <div class="article-info">
+                <span class="article-authors"><%=raw article.author_list.map { |a| link_to a, author_path(a) }.join(', ') %></span>
+                &bull;
+                <span class="article-publisher"><%= link_to article.publisher.name, article.publisher.url %></span>
+                &bull;
+                <span class="article-date"><%= article.date_published.strftime("%b %Y") %></span>
+                <div class="article-categories">
+                <% article.category_list.each do |category| %>
+                    <span class="article-category">
+                        <%=raw link_to category, category_path(category) %></span>
+                <% end %>
+                </div>
             </div>
+
             <p><%= article.body %></h1>
         </li>
     <% end %>

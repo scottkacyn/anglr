@@ -24,10 +24,12 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @publishers = Publisher.all
   end
 
   # GET /articles/1/edit
   def edit
+    @publishers = Publisher.all
   end
 
   # POST /articles
@@ -78,6 +80,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:body, :title, :source_url, :slug, :author_id, :author_list, :category_list, :tag_list)
+      params.require(:article).permit(:body, :title, :source_url, :slug, :publisher_id, :date_published, :author_list, :category_list, :tag_list)
     end
 end

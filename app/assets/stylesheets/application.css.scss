@@ -9,6 +9,7 @@
 * compiled file, but it's generally better to create a new file per style scope.
 *
 *= require_self
+*= require jquery.ui.datepicker
 *= require_tree .
 */
 @import "bootstrap_configuration";
@@ -50,6 +51,22 @@ h1, h2, h3, h4, h5, ul, ol, li, p, div {
 
 .article h1:hover {
     color: #555;
+}
+
+.article-info {
+    margin: 15px 0;
+}
+
+.article-authors a, .article-date, .article-publisher a {
+    color: #333;
+}
+
+.article-date, .article-publisher a {
+    padding: 0 5px;
+}
+
+.article-authors a {
+    padding: 0 5px 0 0;
 }
 
 .article-category {

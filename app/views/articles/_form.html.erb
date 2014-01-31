@@ -24,6 +24,14 @@
   </div>
   <br/> 
   <div class="field">
+    <%= f.text_field :date_published, :class => "datepicker" %>
+  </div>
+  <br/> 
+  <div class="field">
+    <%= f.select :publisher_id, @publishers.all.collect {|p| [p.name, p.id]} %>
+  </div>
+  <br/>
+  <div class="field">
     <%= f.text_field :author_list, :class => "form-control", :placeholder => "Enter the author(s) for the article" %>
   </div>
   <br/>
@@ -39,3 +47,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(function() {
+    $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+});
+</script>
